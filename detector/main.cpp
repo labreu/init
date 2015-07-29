@@ -19,11 +19,14 @@ using namespace cv;
 int main( int argc, char** argv )
 {
     
-    Mat img_object = imread( "/Users/Lucas/Desktop/shell.png", CV_LOAD_IMAGE_GRAYSCALE );
-    Mat img_scene = imread( "/Users/Lucas/Desktop/brands.jpg", CV_LOAD_IMAGE_GRAYSCALE );
+    Mat img_object = imread( "/Users/Lucas/Desktop/opencvlogo.png", CV_LOAD_IMAGE_GRAYSCALE );
+    Mat img_scene = imread( "/Users/Lucas/Desktop/screenshot.png", CV_LOAD_IMAGE_GRAYSCALE );
     
     if( !img_object.data || !img_scene.data )
-    { std::cout<< " --(!) Error reading images " << std::endl; return -1; }
+    {
+        std::cout<< " --(!) Error reading images " << std::endl;
+        return -1;
+    }
     
     //-- Step 1: Detect the keypoints using SURF Detector
     int minHessian = 6000;
